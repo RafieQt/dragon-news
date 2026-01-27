@@ -1,5 +1,6 @@
 import { CiShare2 } from "react-icons/ci";
 import { FaRegBookmark } from "react-icons/fa";
+import { Link } from "react-router";
 
 const NewCart = ({ news }) => {
   const {
@@ -8,7 +9,8 @@ const NewCart = ({ news }) => {
     total_view,
     author,
     thumbnail_url,
-    details
+    details,
+    id
   } = news;
 
   return (
@@ -61,9 +63,9 @@ const NewCart = ({ news }) => {
 
         {/* Read More */}
         <div className="px-4 mt-2">
-          <button className="text-orange-500 text-sm font-semibold hover:underline">
+          <Link to={`news-details/${id}`} className="text-orange-500 text-sm font-semibold hover:underline">
             Read More
-          </button>
+          </Link>
         </div>
         <hr className="border-base-200 w-[85%] mx-auto mt-2" />
 
